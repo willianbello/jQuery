@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eventos com Teclado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../_jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //onkeydown
+            $('#teclaApertada').keydown(function() {
+                alert('Tecla apertada (todas)');
+            });
+
+            //onkeypress
+            $('#teclaPressionada').keypress(function() {
+                alert('Tecla Pressioanda (não aceita ctrl, alt, esc, etc.)');
+            });
+
+            //onkeyup
+            $('#teclaSolta').keyup(function() {
+                alert('Tecla Solta');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>Eventos com o Teclado</h1>
+    <ul>
+        <li>keydown: acionado no momento em que uma tecla é apertada (soltando ou não a tecla)</li>
+        <input type="text" id="teclaApertada">
+        <li>keypress: acionado no momento em que uma tecla é pressionada (soltando-a ou não), porém não captura todas as teclas, como por exemplo alt, ctrl, esc, shift, etc.</li>
+        <input type="text" id="teclaPressionada">
+        <li>keyup: acionado no momento em que a tecla é solta</li>
+        <input type="text" id="teclaSolta">
+
+    </ul>
+
+</body>
+
+</html>
