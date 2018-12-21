@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery Eventos - Mouse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../_jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        //click
+        //dblclick
+        //mousedown
+        //mouseover
+        //mouseout
+
+        $(document).ready(function() {
+
+            $('#clique').click(function() {
+                alert('elemento foi clicado');
+            });
+
+            $('#duploClique').dblclick(function() {
+                alert('elemento recebeu duplo clique');
+            });
+
+            $('#soltandoBotaoOuNao').mousedown(function() {
+                alert('Botão do mouse foi pressionado sobre o elemento');
+            });
+
+            $('#mouseSobreOElemento').mouseover(function() {
+                $('#mouseSobreOElemento').css(
+                    "background-color", "red"
+                );
+            });
+
+            $('#mouseSaiuDoElemento').mouseout(function() {
+                $('#mouseSaiuDoElemento').css({
+                    background: "blue",
+                    color: "white"
+                });
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        div {
+            float: left;
+            margin: 20px;
+            height: 150px;
+            width: 150px;
+            background: #CCC;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="clique">
+        <span>onclick</span>
+    </div>
+
+    <div id="duploClique">
+        <span>ondblclick</span>
+    </div>
+
+    <div id="soltandoBotaoOuNao">
+        <span>onmousedown</span>
+    </div>
+
+    <div id="mouseSobreOElemento">
+        <span>onmouseover</span>
+    </div>
+
+    <div id="mouseSaiuDoElemento">
+        <span>onmouseout</span>
+    </div>
+
+
+</body>
+
+</html>
