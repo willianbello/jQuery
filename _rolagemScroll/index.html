@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll com jQuery</title>
+    <script src="../_jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var link = $('.menu li a');
+            var subir = $('.btn');
+
+            $(link).click(function() {
+                var seletor = $(this).attr("href");
+                var posicao = $(seletor).offset().top;
+                $("html, body").animate({
+                    scrollTop: posicao - 50
+                }, 1000);
+
+            });
+
+            $(subir).click(function() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            $(window).scroll(function() {
+                var minhaPosicao = $(this).scrollTop();
+                if (minhaPosicao >= 400) {
+                    subir.fadeIn()
+                } else {
+                    subir.fadeOut();
+                }
+            });
+
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        body {
+            padding-top: 60px;
+        }
+        
+        .menu {
+            width: 100%;
+            height: 50px;
+            padding: 0;
+            list-style: none;
+            background-color: black;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        
+        .menu li a {
+            color: #fff;
+            padding: 1.1rem 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .menu li a:hover {
+            background-color: pink;
+            color: black;
+        }
+        
+        .item {
+            height: 1200px;
+        }
+        
+        .btn {
+            border: 0;
+            background-color: black;
+            color: #fff;
+            padding: 1rem;
+            font-size: 1rem;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="menu">
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <div class="item">
+        <h2 id="empresa">Empresa</h2>
+        <br>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet lectus at quam facilisis fringilla ac in diam. Sed vitae dignissim eros. Nulla eget metus sit amet justo vehicula bibendum laoreet tristique tellus. Ut blandit mi non erat congue,
+            et consequat augue finibus. Curabitur quis tempor est. Nullam tempor, massa varius ullamcorper commodo, odio mi volutpat massa, sed congue nibh arcu id quam. Mauris semper mauris nec malesuada accumsan. Morbi molestie mauris lacus, nec imperdiet
+            elit feugiat at. Fusce nec neque vel nulla porta aliquet. Donec tempus, massa ac sagittis vestibulum, enim lorem tristique nunc, et lacinia dolor justo in erat. Phasellus facilisis odio id suscipit sodales. Sed fermentum lorem rutrum congue
+            nisi eget, dictum massa. Morbi elementum sodales suscipit. Maecenas aliquet lorem non convallis maximus. Pellentesque sit amet sapien vitae neque tincidunt ultricies. Nullam aliquam venenatis vulputate. Nullam vestibulum lacus erat, id posuere
+            turpis ultricies id. Vivamus lectus leo, lobortis a ornare in, fermentum imperdiet elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean condimentum, lorem eu vehicula mollis, neque felis luctus felis, non luctus sapien
+            mauris in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum est ex, a iaculis nulla consequat vel. Fusce non eros metus. Sed rutrum, lectus aliquet efficitur faucibus, elit metus semper lectus, efficitur
+            lobortis dolor sem a arcu. Ut et nisi et nisl ultricies condimentum. Quisque lorem nisi, vestibulum non mollis et, hendrerit ut nisi. Mauris sollicitudin ornare aliquet. Aliquam erat volutpat. Donec euismod fringilla lacus at consectetur.
+            Curabitur tincidunt ligula ante, vitae blandit turpis pulvinar ut. Cras id magna ac risus faucibus varius. Fusce tincidunt, lacus quis tempus efficitur, ante lorem varius purus, sit amet fermentum odio lorem eu eros. Nam et iaculis lectus.
+            Proin hendrerit suscipit ligula. Pellentesque interdum lorem lacus, sed maximus felis scelerisque maximus. Fusce sit amet orci turpis. Aenean luctus elit vitae turpis semper, ac consequat quam consectetur.
+
+
+        </p>
+    </div>
+    <div class="item">
+        <h2 id="projetos">projetos</h2>
+        <br>
+        <p>
+            Donec commodo aliquam tortor ut vulputate. Phasellus eu pulvinar turpis. Vestibulum quis velit pellentesque, tincidunt nisl sed, dapibus turpis. Quisque dapibus iaculis aliquam. Pellentesque vulputate sit amet risus eu porttitor. Class aptent taciti sociosqu
+            ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et sem ante. Aliquam lacinia porttitor ante in sagittis. Fusce euismod lorem nulla, et feugiat mauris commodo sed. Fusce justo quam, mollis vitae enim quis, consectetur
+            eleifend nunc. Etiam et bibendum sem. Duis id lorem libero. Curabitur sem ligula, iaculis vel sodales a, porta sit amet felis. Mauris nulla urna, convallis vitae malesuada ut, congue a est. Integer porttitor scelerisque neque. Donec commodo
+            purus in risus aliquam, at auctor lorem convallis. Quisque sit amet turpis non turpis lobortis lobortis et vel nisi. Nunc elementum libero quis odio posuere, eu sagittis tortor fringilla. Maecenas pulvinar nisi leo, vitae luctus est volutpat
+            eu. Morbi placerat ligula id venenatis tempus. Maecenas rutrum egestas finibus. Aliquam consequat lectus augue, eu mattis lorem viverra ut. Sed bibendum laoreet aliquet. Ut vel ligula at mauris aliquet efficitur ut a nunc. Mauris dictum mi
+            a sapien blandit mollis ac sit amet ex. Donec nibh est, semper in faucibus scelerisque, interdum ut libero. Nunc nec enim quis urna feugiat sollicitudin at nec nisl. Maecenas nec ligula libero. Proin tristique sem augue, quis porttitor risus
+            pellentesque at. Mauris tincidunt metus sed arcu rhoncus iaculis. Praesent rutrum sagittis aliquam. Etiam laoreet semper tellus, eget fringilla diam pharetra eu. Pellentesque sed urna a turpis pretium cursus vulputate eget metus. Fusce sagittis
+            ipsum id gravida pellentesque. Proin at euismod felis, a ullamcorper justo. Vivamus orci justo, lobortis vitae efficitur in, tincidunt id nisl. Vestibulum pharetra convallis nunc non pulvinar. Ut finibus, nisi id commodo condimentum, ipsum
+            lorem congue urna, a pulvinar diam enim quis massa. Mauris convallis tincidunt eros at faucibus. Praesent ut purus interdum, euismod urna sit amet, viverra nisl. Sed vulputate, augue fermentum commodo varius, sem dolor interdum leo, in semper
+            mauris neque id dui. Vivamus pulvinar odio nunc, eleifend dictum turpis elementum ut. Suspendisse pellentesque magna vel neque lobortis molestie. Quisque iaculis commodo tortor, sed consectetur enim ornare in. Aliquam erat volutpat. Vestibulum
+            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque at risus egestas, semper quam quis, porttitor ligula. Nullam dapibus odio ligula, ac mattis neque sodales a. Suspendisse ex ipsum, scelerisque sed nulla
+            nec, rhoncus rutrum leo. Nulla vitae nisi tincidunt, elementum leo quis, tristique nunc. Phasellus et risus sit amet magna finibus luctus. Sed interdum vehicula enim, a tempus risus convallis ac. Vestibulum convallis sollicitudin tellus sit
+            amet eleifend.
+        </p>
+    </div>
+    <div class="item">
+        <h2 id="contato">Contato</h2>
+        <br>
+        <p>
+            Pellentesque consectetur euismod iaculis. Nam ultrices sagittis tellus, eget aliquet mauris condimentum ac. Integer orci arcu, varius vitae magna non, iaculis finibus quam. Curabitur sed vulputate massa. Donec eleifend, turpis at tempor pulvinar, sapien
+            diam auctor ipsum, quis porta sapien nisi vitae sem. Ut porttitor metus velit. Maecenas volutpat, neque et commodo sagittis, elit nulla tincidunt lectus, eget pellentesque sapien nibh eget orci. Cras et urna eu diam egestas pulvinar at quis
+            nulla. Phasellus venenatis id velit sit amet placerat. Cras porttitor congue eros, a luctus lectus pharetra id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam at malesuada dolor. Quisque consectetur
+            justo eu enim tincidunt, et placerat elit hendrerit. Aenean sit amet mi pretium, sodales dui nec, elementum ante. Vivamus porttitor eu nibh vel aliquet. Nam vitae tristique nulla. Phasellus facilisis odio id suscipit sodales. Sed fermentum
+            lorem rutrum, congue nisi eget, dictum massa. Morbi elementum sodales suscipit. Maecenas aliquet lorem non convallis maximus. Pellentesque sit amet sapien vitae neque tincidunt ultricies. Nullam aliquam venenatis vulputate. Nullam vestibulum
+            lacus erat, id posuere turpis ultricies id. Vivamus lectus leo, lobortis a ornare in, fermentum imperdiet elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean condimentum, lorem eu vehicula mollis, neque felis luctus
+            felis, non luctus sapien mauris in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum est ex, a iaculis nulla consequat vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+            himenaeos. Nulla facilisi. Nunc nec nisl orci. Nulla ornare orci sit amet arcu posuere, posuere pulvinar elit vehicula. Sed lectus justo, aliquet id leo non, auctor sollicitudin augue. Nullam tincidunt finibus elementum. Etiam aliquet massa
+            justo, eu pellentesque neque iaculis ac. Aenean sed hendrerit diam, non dapibus ipsum. Ut non mauris sed arcu venenatis ullamcorper. Sed dignissim mollis felis, nec facilisis arcu tristique quis.
+
+
+        </p>
+    </div>
+
+    <button class="btn">Subir</button>
+
+</body>
+
+</html>
